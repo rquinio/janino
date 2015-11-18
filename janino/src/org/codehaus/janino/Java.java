@@ -386,7 +386,7 @@ class Java {
         }
 
         @Override public void
-        setEnclosingScope(Scope enclosingScope) { this.setEnclosingScope(enclosingScope); }
+        setEnclosingScope(Scope enclosingScope) { this.type.setEnclosingScope(enclosingScope); }
 
         @Override public void
         accept(Visitor.AnnotationVisitor visitor) { visitor.visitNormalAnnotation(this); }
