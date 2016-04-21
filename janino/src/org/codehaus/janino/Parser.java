@@ -358,7 +358,12 @@ class Parser {
         }
 
         List<Java.ElementValuePair> evps = new ArrayList();
-        while (!this.peekRead(")")) evps.add(this.parseElementValuePair());
+        while (!this.peekRead(")")) {
+            if(!evps.isEmpty()){
+                this.read(",");
+            }
+            evps.add(this.parseElementValuePair());
+        }
 
         return new Java.NormalAnnotation(
             type,
